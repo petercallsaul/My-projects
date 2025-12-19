@@ -1,7 +1,7 @@
 Dusty Scrapper V2 - Complete Code Documentation
 A full-stack web application for exploring and filtering data from multiple CSV datasets with a modern, responsive UI.
 
-Pyle - Secure Anonymous Therapy Chat Platform
+Umatter - Secure Anonymous Therapy Chat Platform
 Professional mental health support with military-grade encryption, complete anonymity, and AI-assisted care.
 
 🏥 About Pyle
