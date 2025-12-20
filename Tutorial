@@ -1,0 +1,160 @@
+# U Matter Tutorial – How to Use the App
+( I have made this project with my mate Mazen Ragab and he is the one who changed the name to pyle )
+
+---
+
+## 1) Prerequisites
+- Node.js 18 or newer: https://nodejs.org/en/download
+- A modern browser (Chrome, Edge, Firefox)
+- Optional: Supabase project for auth/realtime features
+
+---
+
+## 2) Get the Code
+If you already have the folder, skip this. Otherwise:
+```powershell
+# example
+git clone <YOUR_GIT_URL>
+```
+Project root is the `Pyle-main` folder.
+enter the terminal then type C:\Users\SPEED\Downloads\Umatter\Pyle-main 
+---
+
+## 3) Install Dependencies
+From the last directory:
+```powershell
+npm ci
+```
+If `npm ci` fails, use:
+```powershell
+npm install
+```
+
+---
+
+## 4) Run in Development
+From `Pyle-main`:
+```powershell
+npm run dev
+```
+Open: http://localhost:8080
+
+Vite’s dev server will print a Local URL and possibly Network URLs. Use the Local URL.
+
+---
+
+## 5) Using the App (Demo Mode)
+The UI works out of the box. For a quick demo, use these default credentials:
+
+- Administrator
+  - Email: `admin@pyle.com`
+  - Password: `SecurePass123!`
+- Psychologist
+  - Email: `dr.smith@pyle.com`
+  - Password: `TherapySecure456!`
+- Patient
+  - Email: `patient@pyle.com`
+  - Password: `Anonymous789!`
+
+Note: In full integrations, authentication is provided by Supabase. Without configuring Supabase (see Section 6), some features may be mocked or limited.
+
+---
+
+## 6) Optional: Configure Supabase
+If you want authentication, realtime, and database-backed features:
+
+1. Create a Supabase project: https://supabase.com/
+2. Get your values from Project Settings → API
+   - URL
+   - anon (public) key
+3. Create a `.env` file in `Pyle-main` with:
+```
+VITE_SUPABASE_URL=<your-supabase-project-url>
+VITE_SUPABASE_PUBLISHABLE_KEY=<your-supabase-anon-key>
+```
+4. Restart the dev server:
+```powershell
+npm run dev
+```
+
+Environment variables prefixed with `VITE_` are exposed to the frontend via Vite.
+
+---
+
+## 7) App Tour
+- Login: Choose a role and sign in using demo credentials or your Supabase-backed auth.
+- Dashboard: Navigate between Patient, Psychologist, and Admin views depending on your role.
+- Chat: Explore secure chat UI. With Supabase configured, you can wire this to realtime features.
+- Booking: Try the session booking flow.
+- Theme: Toggle dark/light mode from the top navigation.
+
+---
+
+## 8) Build for Production
+Create an optimized build:
+```powershell
+npm run build
+```
+Preview the production build locally:
+```powershell
+npm run preview
+```
+This serves the built site and prints a local URL to open in your browser.
+
+---
+
+## 9) Deploying
+You can host the production `dist/` output on static hosts like Vercel or Netlify.
+- Vercel (example):
+  - Install the Vercel CLI and run:
+    ```powershell
+    vercel --prod
+    ```
+- Netlify:
+  - Set build command to `npm run build` and publish directory to `dist`.
+
+Make sure to configure environment variables (`VITE_SUPABASE_*`) in your hosting provider if you use Supabase.
+
+---
+
+## 10) Troubleshooting
+- Port already in use (8080):
+  - Close conflicting app or change port in `vite.config.ts` under `server.port`.
+- Node version issues:
+  - Ensure `node -v` shows v18+.
+- Dependency install issues:
+  - Run `npm cache verify` and try `npm ci` again.
+  - If needed, delete `node_modules` and `package-lock.json`, then run `npm install`.
+- Browserslist warning:
+  - Optional to update: `npx update-browserslist-db@latest`
+- Env variables not applied:
+  - Confirm `.env` is in `Pyle-main` and names start with `VITE_`.
+  - Restart `npm run dev` after changes.
+
+---
+
+## 11) Tech Stack Reference
+- React 18 + TypeScript + Vite
+- TailwindCSS + shadcn/ui
+- Supabase (Auth, Database, Realtime)
+
+---
+
+## 12) Quick Commands Reference
+```powershell
+# install deps
+npm ci
+
+# start dev server
+npm run dev
+
+# production build
+npm run build
+
+# preview production build
+npm run preview
+```
+
+---
+
+That’s it! You should now be able to install, run, explore, and optionally configure the Pyle app with Supabase.
