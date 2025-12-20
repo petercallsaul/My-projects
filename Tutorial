@@ -1,4 +1,4 @@
-# U Matter Tutorial – How to Use the App
+r# U Matter Tutorial – How to Use the App
 
 This Website was made by me and my mate Mazen Ragab and he is the one who has changed the website name from U Matter to Pyle
 
@@ -18,7 +18,7 @@ If you already have the folder, skip this. Otherwise:
 git clone <YOUR_GIT_URL>
 ```
 Project root is the `Pyle-main` folder.
-
+Enter powershell and write C:\Users\SPEED\Downloads\Umatter\Pyle-main
 ---
 
 ## 3) Install Dependencies
